@@ -26,13 +26,7 @@ export const setupServer = () => {
 
   app.use(router);
 
-  app.get('/', (req, res) => {
-    res.json({
-      message: 'Not found',
-    });
-  });
-
-  app.use('*', notFoundHandler);
+  app.use(notFoundHandler);
 
   app.use(errorHandler);
 
